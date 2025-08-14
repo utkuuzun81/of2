@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import Cart from '../models/cart.js';
-import Product from '../models/Product.js';
+import Product from '../models/product.js';
 import verifyToken from '../middleware/verifyToken.js';
 
 const router = express.Router();

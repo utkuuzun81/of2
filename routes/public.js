@@ -1,7 +1,7 @@
 import express from 'express';
 import rateLimit from 'express-rate-limit';
 import Joi from 'joi';
-import Notification from '../models/Notification.js';
+import Notification from '../models/notification.js';
 import { getSystemPublic } from '../controllers/settingsController.js';
 
 const router = express.Router();

@@ -1,8 +1,8 @@
 import Order from '../models/order.js';
-import LoyaltyTransaction from '../models/LoyaltyTransaction.js';
+import LoyaltyTransaction from '../models/loyaltytransaction.js';
 import mongoose from 'mongoose';
 import User from '../models/user.js';
-import Settings from '../models/Settings.js';
+import Settings from '../models/settings.js';
 
 export const getSummary = async (req, res) => {
   // Orders are stored with userId as string (uuid) on Order, but LoyaltyTransaction.userId is ObjectId

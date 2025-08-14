@@ -3,9 +3,9 @@ import User from '../models/user.js';
 import Product from '../models/product.js';
 import PDFDocument from 'pdfkit';
 import mongoose from 'mongoose';
-import Settings from '../models/Settings.js';
-import LoyaltyTransaction from '../models/LoyaltyTransaction.js';
-import Notification from '../models/Notification.js';
+import Settings from '../models/settings.js';
+import LoyaltyTransaction from '../models/loyaltytransaction.js';
+import Notification from '../models/notification.js';
 import emitNotification from '../utils/emitNotification.js';
 import { sendMail } from '../utils/mailer.js';
 

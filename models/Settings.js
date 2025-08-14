@@ -11,14 +11,14 @@ const SettingsSchema = new mongoose.Schema({
     sessionTimeout: Number,
     maxLoginAttempts: Number,
     pendingApprovalRedirectMs: { type: Number, default: 60000 },
-  // Platform commission settings
-  commissionRate: { type: Number, default: 0.05 }, // 0.05 => %5
-  // Quick Sell pricing: percentage discount applied to entered estimated unit price
-  quickSellDiscount: { type: Number, default: 10 }, // %10
-  quickSellMinDiscount: { type: Number, default: 0 },
-  quickSellMaxDiscount: { type: Number, default: 50 },
-  quickSellEnabled: { type: Boolean, default: true },
-  // Loyalty / Points settings
+    // Platform commission settings
+    commissionRate: { type: Number, default: 0.05 }, // 0.05 => %5
+    // Quick Sell pricing: percentage discount applied to entered estimated unit price
+    quickSellDiscount: { type: Number, default: 10 }, // %10
+    quickSellMinDiscount: { type: Number, default: 0 },
+    quickSellMaxDiscount: { type: Number, default: 50 },
+    quickSellEnabled: { type: Boolean, default: true },
+    // Loyalty / Points settings
     points: {
       earnRate: { type: Number, default: 1 }, // 1 TL = earnRate points
       levels: [

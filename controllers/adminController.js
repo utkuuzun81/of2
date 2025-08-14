@@ -1,9 +1,9 @@
 import User from '../models/user.js';
 import Product from '../models/product.js';
-import Quotation from '../models/Quotation.js';
-import FranchiseApplication from '../models/franchiseApplication.js';
+import Quotation from '../models/quotation.js';
+import FranchiseApplication from '../models/franchiseapplication.js';
 import Order from '../models/order.js';
-import SupplierApplication from '../models/SupplierApplication.js';
+import SupplierApplication from '../models/supplierapplication.js';
 import Joi from 'joi';
 
 // Kullanıcı rol ve statü güncelle

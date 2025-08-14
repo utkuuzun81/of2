@@ -1,4 +1,4 @@
-import Defect from '../models/Defect.js';
+import Defect from '../models/defect.js';
 
 export const listDefects = async (req, res, next) => {
   try {

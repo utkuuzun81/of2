@@ -1,4 +1,4 @@
-import Quotation from '../models/Quotation.js';
+import Quotation from '../models/quotation.js';
 import Joi from 'joi';
 
 const quotationCreateSchema = Joi.object({
@@ -133,7 +133,7 @@ export const createQuotation = async (req, res, next) => {
       let quickSellEnabled = true;
       let minD = 0, maxD = 50;
       try {
-        const Settings = (await import('../models/Settings.js')).default;
+  const Settings = (await import('../models/settings.js')).default;
         const s = await Settings.findOne({ category: 'system' });
         const sys = s?.systemSettings || {};
         if (typeof sys.quickSellDiscount === 'number') quickSellDiscount = sys.quickSellDiscount;

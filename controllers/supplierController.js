@@ -1,4 +1,4 @@
-import SupplierApplication from '../models/SupplierApplication.js';
+import SupplierApplication from '../models/supplierapplication.js';
 
 export const applySupplier = async (req, res) => {
   const newApp = new SupplierApplication(req.body);

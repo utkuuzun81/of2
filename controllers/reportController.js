@@ -2,7 +2,7 @@ import { Parser } from 'json2csv';
 import ExcelJS from 'exceljs';
 import PDFDocument from 'pdfkit';
 import Order from '../models/order.js';
-import LoyaltyTransaction from '../models/LoyaltyTransaction.js';
+import LoyaltyTransaction from '../models/loyaltytransaction.js';
 
 // Helper: parse date range safely
 function parseDateRange(query) {

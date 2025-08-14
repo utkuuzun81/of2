@@ -1,4 +1,4 @@
-import Settings from '../models/Settings.js';
+import Settings from '../models/settings.js';
 import mongoose from 'mongoose';
 
 // Admin: sistem ayarlarını getir

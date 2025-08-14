@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import Joi from 'joi';
 import nodemailer from 'nodemailer';
 import { JWT_SECRET, debugSecret } from '../config/secrets.js';
-import Session from '../models/Session.js';
+import Session from '../models/session.js';
 debugSecret();
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '1d';
 const REQUIRE_EMAIL_VERIFICATION = String(process.env.REQUIRE_EMAIL_VERIFICATION || 'false') === 'true';

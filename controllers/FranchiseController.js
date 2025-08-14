@@ -1,4 +1,4 @@
-import FranchiseApplication from '../models/franchiseApplication.js';
+import FranchiseApplication from '../models/franchiseapplication.js';
 
 export const applyFranchise = async (req, res) => {
   const application = await FranchiseApplication.create({

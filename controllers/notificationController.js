@@ -1,4 +1,4 @@
-import Notification from '../models/Notification.js';
+import Notification from '../models/notification.js';
 import emitNotification from '../utils/emitNotification.js';
 import mongoose from 'mongoose';
 

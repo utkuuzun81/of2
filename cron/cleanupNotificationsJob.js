@@ -1,5 +1,5 @@
 import cron from 'node-cron';
-import Notification from '../models/Notification.js';
+import Notification from '../models/notification.js';
 
 export const startNotificationCleanupJob = () => {
   cron.schedule('0 3 * * *', async () => {

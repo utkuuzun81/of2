@@ -1,4 +1,4 @@
-import Session from '../models/Session.js';
+import Session from '../models/session.js';
 
 export const listSessions = async (req, res) => {
   const items = await Session.find({ userId: req.user.id, revokedAt: { $exists: false } }).sort({ lastSeenAt: -1 }).lean();
