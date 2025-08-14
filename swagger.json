@@ -1,0 +1,186 @@
+{
+  "/api/integrations/payment/init": {
+    "post": {
+      "tags": ["Payment"],
+      "summary": "Mock ödeme başlat (Iyzico)",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "orderId": { "type": "string" },
+                "amount": { "type": "number" },
+                "currency": { "type": "string", "example": "TRY" }
+              },
+              "required": ["orderId", "amount", "currency"]
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Başarılı ödeme token'ı",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": { "type": "string" },
+                  "iyzicoToken": { "type": "string" },
+                  "paymentUrl": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/api/integrations/payment/verify": {
+    "post": {
+      "tags": ["Payment"],
+      "summary": "Mock ödeme doğrulama",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": { "type": "string" }
+              },
+              "required": ["token"]
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Ödeme sonucu",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": { "type": "string" },
+                  "message": { "type": "string" },
+                  "paidAt": { "type": "string", "format": "date-time" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/api/integrations/cargo/create": {
+    "post": {
+      "tags": ["Cargo"],
+      "summary": "Mock kargo gönderimi başlat (Aras)",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "orderId": { "type": "string" },
+                "address": { "type": "string" }
+              },
+              "required": ["orderId", "address"]
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Kargo gönderi bilgisi",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "trackingNumber": { "type": "string" },
+                  "carrier": { "type": "string" },
+                  "status": { "type": "string" },
+                  "estimatedDelivery": { "type": "string", "format": "date-time" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/api/integrations/cargo/track/{trackingNumber}": {
+    "get": {
+      "tags": ["Cargo"],
+      "summary": "Mock kargo takip bilgisi",
+      "parameters": [
+        {
+          "name": "trackingNumber",
+          "in": "path",
+          "required": true,
+          "schema": { "type": "string" }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Takip durumu",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": { "type": "string" },
+                  "delivered": { "type": "boolean" },
+                  "updatedAt": { "type": "string", "format": "date-time" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/api/integrations/invoice/generate": {
+    "post": {
+      "tags": ["Accounting"],
+      "summary": "Mock XML fatura üretimi (Logo Go)",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "invoiceId": { "type": "string" },
+                "customerName": { "type": "string" },
+                "amount": { "type": "number" }
+              },
+              "required": ["invoiceId", "customerName", "amount"]
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Fatura dosya yolu",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": { "type": "string" },
+                  "file": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
